@@ -38,5 +38,5 @@ def main():
     bot.set_webhook(url='5818181982:AAFUjKRa55g1yF-zdmtkXsrx0Iv3I3PCjHM' + TOKEN)
     return 'Python Telegram Bot', 200
 
-if __name__ == '__tlg_bot_01__':
+if __name__ == '__tlg-bot-01__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
