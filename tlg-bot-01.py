@@ -6,11 +6,11 @@ app = Flask(__name__)
 TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
-@bot.message.handler(commands=['start'])
+@bot.message_handler(commands=['start'])
 def message_start(message):
     bot.send_message(message.chat.id, 'Hello, user!')
 
-@bot.message.handler(commands=['Links'])
+@bot.message_handler(commands=['Links'])
 def message_courses(message):
     keyboard = telebot.types.InLineKeyboardMarkup(row_width=1)
 
@@ -23,7 +23,7 @@ def message_courses(message):
 
         bot.send_message(message.chat.id, 'List of links', reply_markup=keyboard)
 
-@bot.message.handler(func=lambda x: x.text.lower().startswith('Not interested'))
+@bot.message_handler(func=lambda x: x.text.lower().startswith('Not interested'))
 def message_text(message):
     bot.send_message(message.chat.id, 'If you`ll change your mind - please, chat again')
 
