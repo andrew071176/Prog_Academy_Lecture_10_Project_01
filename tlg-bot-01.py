@@ -21,11 +21,11 @@ def message_courses(message):
             url_button = telebot.types.InLineKeyboardButton(text=title.strip(), url=link.strip())
             keyboard.add(url_button)
 
-        bot.send.message(message.chat.id, 'List of links', reply_markup=keyboard)
+        bot.send_message(message.chat.id, 'List of links', reply_markup=keyboard)
 
 @bot.message.handler(func=lambda x: x.text.lower().startswith('Not interested'))
 def message_text(message):
-    bot.send.message(message.chat.id, 'If you`ll change your mind - please, chat again')
+    bot.send_message(message.chat.id, 'If you`ll change your mind - please, chat again')
 
 @app.route('/' + TOKEN, methods=['POST'])
 def get_message():
