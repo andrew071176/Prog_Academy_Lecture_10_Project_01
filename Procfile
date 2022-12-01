@@ -1,1 +1,1 @@
-web: python3 TLG_Bot_01.py
+web: python3 tlg_bot_01.py
