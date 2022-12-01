@@ -17,13 +17,13 @@ def message_courses(message):
     with open('Links.txt') as file:
         links = [item.split(',') for item in file]
 
-        for title. link in links:
+        for title, link in links:
             url_button = telebot.types.InLineKeyboardButton(text=title.strip(), url=link.strip())
             keyboard.add(url_button)
 
         bot.send.message(message.chat.id, 'List of links', reply_markup=keyboard)
 
-@bot.message.handler(func=lambda x: x.text.lower().startwith('Not interested'))
+@bot.message.handler(func=lambda x: x.text.lower().startswith('Not interested'))
 def message_text(message):
     bot.send.message(message.chat.id, 'If you`ll change your mind - please, chat again')
 
