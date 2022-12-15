@@ -11,14 +11,14 @@ def message_start(message):
     bot.send_message(message.chat.id, 'Hello, user!')
 
 @bot.message_handler(commands=['Links'])
-def message_courses(message):
-    keyboard = telebot.types.InLineKeyboardMarkup(row_width=1)
+def message_links(message):
+    keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 
     with open('Links.txt') as file:
         links = [item.split(',') for item in file]
 
         for title, link in links:
-            url_button = telebot.types.InLineKeyboardButton(text=title.strip(), url=link.strip())
+            url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
             keyboard.add(url_button)
 
         bot.send_message(message.chat.id, 'List of links', reply_markup=keyboard)
